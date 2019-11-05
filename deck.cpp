@@ -25,7 +25,7 @@ Deck::Deck(){
         i++;
         rankCount++;
     }
-    myIndex = 0;  // current card to deal
+    myIndex = SIZE-1;  // current card to deal
 }
 
 // shuffle the deck, all 52 cards present
@@ -44,24 +44,20 @@ void Deck::shuffle(){
 
 // get a card, after 52 are dealt, fail
 Card Deck::dealCard(){
-    Card dealtCard;
-    dealtCard = myCards[myIndex];
-    myCards[myIndex] = ;
-    myIndex = ;
-    //need to figure out what to set the index to when removed
-    //also should index start at beginning (o) or end (52) ??
-
-    return dealtCard;
+    if (myIndex >= 0) {
+        Card dealtCard;
+        dealtCard = myCards[myIndex];
+        myIndex--;
+        return dealtCard;
+    }
+    else{
+        cout << "fail" << endl;
+    }
 }
 
 
 // # cards left in the deck
 int  Deck::size() const{
-    int numCards = 0;
-    for (int i=0; i < SIZE; i++){
-        if (myCards[i] != NULL){ //need to fix to be whatever it is that we set the card to
-            numCards++;
-        }
-    }
+    int numCards = myIndex + 1;
     return numCards;
 }
