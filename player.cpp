@@ -30,7 +30,7 @@ void Player::bookCards(Card c1, Card c2){
 //OPTIONAL
 // comment out if you decide to not use it
 //this function will check a players hand for a pair.
-//If a pair is found, it returns true and populates the two variables with the cards tha make the pair.
+//If a pair is found, it returns true and populates the two variables with the cards that make the pair.
 
 bool Player::checkHandForBook(Card &c1, Card &c2){
     Card check;
@@ -132,23 +132,22 @@ int Player::getBookSize() const{
     return myBook.size();
 }
 
-
-
+//I THINK THIS IS SAME AS checkHandForBook*************
 //OPTIONAL
 // comment out if you decide to not use it
 //this function will check a players hand for a pair.
-//If a pair is found, it returns true and populates the two variables with the cards tha make the pair.
+//If a pair is found, it returns true and populates the two variables with the cards that make the pair.
 
-bool Player::checkHandForPair(Card &c1, Card &c2){
+//bool Player::checkHandForPair(Card &c1, Card &c2){
 
-}
+//}
 
-
+//I THINK THIS IS SAME AS rankInHand*************
 //OPTIONAL
 // comment out if you decide to not use it
 //Does the player have a card with the same rank as c in her hand?
 //e.g. will return true if the player has a 7d and the parameter is 7c
 
-bool Player::sameRankInHand(Card c) const{
+//bool Player::sameRankInHand(Card c) const{
 
-}
+//}
