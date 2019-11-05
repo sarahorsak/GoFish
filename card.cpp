@@ -56,11 +56,14 @@ string Card::suitString(Suit s) const{
 
 string Card::rankString(int r) const{
     string rankString;
-    if (r <= 10 && r > 1){
+    if (r < 10 && r > 1){
        rankString = ((char) (r + '0'));
     }
     else if (r == 1){
         rankString = "A";
+    }
+    else if (r == 10){
+        rankString = "10";
     }
     else if (r == 11){
         rankString = "J";

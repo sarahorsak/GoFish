@@ -15,6 +15,35 @@ void dealHand(Deck &d, Player &p, int numCards);
 
 int main( )
 {
+    Card c;
+    cout << c.getRank()  << endl;
+
+    Card d(1, Card::spades);
+    Card e(11, Card::diamonds);
+    Card f(12, Card::hearts);
+    Card g(13, Card::clubs);
+    Card h(13, Card::clubs);
+
+    cout << d.getRank()  << endl;
+    cout << e.getRank()  << endl;
+    cout << f.getRank()  << endl;
+    cout << g.getRank()  << endl;
+
+    cout << c.toString() << endl;
+    cout << d.toString() << endl;
+    cout << e.toString() << endl;
+    cout << f.toString() << endl;
+    cout << g.toString() << endl;
+
+    cout << (g==h) << endl;
+    cout << (g!=h) << endl;
+
+
+    Deck deck;
+
+
+
+
     /*
     int numCards = 5;
 
