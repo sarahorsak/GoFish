@@ -44,11 +44,24 @@ void Deck::shuffle(){
 
 // get a card, after 52 are dealt, fail
 Card Deck::dealCard(){
+    Card dealtCard;
+    dealtCard = myCards[myIndex];
+    myCards[myIndex] = ;
+    myIndex = ;
+    //need to figure out what to set the index to when removed
+    //also should index start at beginning (o) or end (52) ??
 
+    return dealtCard;
 }
 
 
 // # cards left in the deck
 int  Deck::size() const{
-
+    int numCards = 0;
+    for (int i=0; i < SIZE; i++){
+        if (myCards[i] != NULL){ //need to fix to be whatever it is that we set the card to
+            numCards++;
+        }
+    }
+    return numCards;
 }
