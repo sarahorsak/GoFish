@@ -33,8 +33,8 @@ void Deck::shuffle(){
     Card temp;
     for (int i = 0; i < SIZE * 2; i++) {
         //get random locations
-        int num1 = (rand() % (SIZE-1));
-        int num2 = (rand() % (SIZE-1));
+        int num1 = (rand() % (SIZE));
+        int num2 = (rand() % (SIZE));
         //swap
         temp = myCards[num1];
         myCards[num1] = myCards[num2];
