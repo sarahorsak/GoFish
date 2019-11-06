@@ -33,12 +33,10 @@ void Player::bookCards(Card c1, Card c2){
 //If a pair is found, it returns true and populates the two variables with the cards that make the pair.
 
 bool Player::checkHandForBook(Card &c1, Card &c2){
-    Card check;
     for (int i = 0; i < myHand.size(); i++){
-        check = myHand[i];
         for (int j = i+1; j < myHand.size(); j++){
-            if (check == myHand[j]){
-                c1 = check;
+            if (myHand[i].getRank() == myHand[j].getRank()){
+                c1 = myHand[i];
                 c2 = myHand[j];
                 return true;
             }
@@ -52,7 +50,7 @@ bool Player::checkHandForBook(Card &c1, Card &c2){
 //Does the player have a card with the same rank as c in her hand?
 bool Player::rankInHand(Card c) const{
     for (int i = 0; i < myHand.size(); i++){
-        if (myHand[i] == c){
+        if (myHand[i].getRank() == c.getRank()){
             return true;
         }
     }
@@ -68,32 +66,30 @@ Card Player::chooseCardFromHand() const{
     int index = (rand() % (myHand.size()));
     cardFromHand = myHand[index];
     return cardFromHand;
-
 }
 
 //Does the player have the card c in her hand?
 bool Player::cardInHand(Card c) const{
-    for(Card i : myHand) {
-        if (i == c) {
+    for (int i = 0; i < myHand.size(); i++){
+        if (myHand[i] == c){
             return true;
         }
     }
     return false;
 }
 
-//Remove the card c from the hand and return it to the caller
+//Remove the card c from the hand with same suit and rank and return it to the caller
+//precondition: the card is in the Hand
 Card Player::removeCardFromHand(Card c) {
-    //start the vector iterator at the end of the hand
-    vector<Card>::iterator it = myHand.end();
-    //while the iterator isn't at beginning of the hand
-    while (it != myHand.begin()) {
-        if (*it == c) {
-            Card removed = *it;
-            myHand.erase(it); // delete element at this position
-            return removed; //return the element
+    Card removed;
+    for (int i = 0; i < myHand.size(); i++){
+        if (myHand[i] == c){
+            removed = myHand[i];
+            myHand.erase(myHand.begin()+i);
+            return removed;
         }
-        it--;
     }
+    return removed;
 }
 
 //outputs the cards in the hand as a string
@@ -131,6 +127,7 @@ int Player::getHandSize() const{
 int Player::getBookSize() const{
     return myBook.size();
 }
+
 
 //I THINK THIS IS SAME AS checkHandForBook*************
 //OPTIONAL
