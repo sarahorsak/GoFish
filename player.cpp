@@ -95,10 +95,10 @@ Card Player::removeCardFromHand(Card c) {
 //outputs the cards in the hand as a string
 string Player::showHand() const{
     string hand;
-    for(Card i : myHand) {
-        hand += i.toString();
+    for(int i = 0; i < myHand.size(); i++) {
+        hand += myHand[i].toString();
         //as long as its not the last one in the hand
-        if (i != myHand[myHand.size() -1]){
+        if (myHand[i] != myHand[myHand.size() -1]){
             hand += ", ";
         }
     }
@@ -108,10 +108,10 @@ string Player::showHand() const{
 //outputs the cards in the book as a string
 string Player::showBooks() const{
     string books;
-    for(Card i : myBook) {
-        books += i.toString();
+    for(int i = 0; i < myBook.size(); i++) {
+        books += myBook[i].toString();
         //as long as its not the last one in the book
-        if (i != myBook[myBook.size() -1]){
+        if (myBook[i] != myBook[myBook.size() -1]){
             books += ", ";
         }
     }
